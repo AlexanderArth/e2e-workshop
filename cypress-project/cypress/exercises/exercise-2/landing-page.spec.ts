@@ -32,7 +32,7 @@ describe("Landing page", () => {
       cy.url().should('include', '/list');
     });
 
-    it.only("should navigate to create person page", () => {
+    it("should navigate to create person page", () => {
       /*
        * given: user is logged in
        * when: user clicks on button for create person
@@ -44,12 +44,14 @@ describe("Landing page", () => {
   });
 
   describe("Route protection", () => {
-    it("should redirect to landing page on invalid URL if user is logged in", () => {
+    it.only("should redirect to landing page on invalid URL if user is logged in", () => {
       /*
        * given: user is logged in
        * when: user navigates to base-url/xyz
        * then: user is redirected to landing page
        */
+      cy.visit('/wrongpage', {timeout: 6000});
+      cy.url().should('include', '/landing');
     });
 
     it("should redirect to landing page if navigating to login URL if user is logged in", () => {

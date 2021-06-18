@@ -1,3 +1,4 @@
 {
-	"baseUrl": "https://e2e-ws-app.playground.aws.tngtech.com"
+	"baseUrl": "https://e2e-ws-app.playground.aws.tngtech.com",
+	"experimentalStudio": true
 }
